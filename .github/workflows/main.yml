@@ -6,8 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Test heroku-20
       run: make test-heroku-20
     - name: Test heroku-22
       run: make test-heroku-22
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
